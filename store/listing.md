@@ -15,6 +15,7 @@ is plain source, so answer "No".
 | Support | https://github.com/equwal/subread-extension/issues |
 | Privacy policy | https://subread.space/terms.html |
 | Licence (AMO) | GNU Affero General Public License v3.0 |
+| Contributions URL (AMO) | https://ko-fi.com/truex |
 
 ## Description
 
