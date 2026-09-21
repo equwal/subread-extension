@@ -7,6 +7,10 @@ in the browser), then read along on the video.
 
 Press **SR** at the top right of the player, and choose the `.srt`.
 
+![The caption over the player, and the SR panel: file, start, speed, size](docs/screenshots/player.png)
+
+The picture is from the stand-in page in `tests/mock/` (`/watch?v=mock&demo`), not from YouTube.
+
 - **Start**: the video on YouTube often has an intro that your audio file does
   not. Play to where the narrator reads the first line and press
   **First line is now**, or move the start by 0.1 s and 1 s.

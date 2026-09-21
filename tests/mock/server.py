@@ -21,7 +21,16 @@ PAGE = b"""<!doctype html><meta charset=utf-8><title>mock watch page</title>
   setInterval(() => { g.fillStyle = '#123'; g.fillRect(0, 0, 320, 180); g.fillStyle = '#fff'; g.fillText(String(n++), 10, 20); }, 100);
   const v = document.querySelector('video'); v.srcObject = c.captureStream(10); v.play();
 </script>
-<script src=/src/srt.js></script><script src=/src/content.js></script>"""
+<script src=/src/srt.js></script><script src=/src/content.js></script>
+<script>
+  // ?demo : subtitles loaded and the panel open, for a screenshot.
+  if (location.search.includes('demo')) setTimeout(() => {
+    const srt = '1\\n00:00:00,000 --> 09:00:00,000\\n\\u543e\\u8f29\\u306f\\u732b\\u3067\\u3042\\u308b\\u3002\\u540d\\u524d\\u306f\\u307e\\u3060\\u7121\\u3044\\u3002\\n';
+    const input = document.querySelector('.subread-file'), dt = new DataTransfer();
+    dt.items.add(new File([srt], 'wagahai.ja.srt')); input.files = dt.files; input.dispatchEvent(new Event('change'));
+    document.querySelector('.subread-button').click();
+  }, 800);
+</script>"""
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *a, **k): super().__init__(*a, directory=str(ROOT), **k)
