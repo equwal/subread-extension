@@ -1,0 +1,37 @@
+/* Over the YouTube player. Each name starts with subread- so that nothing of the page is touched. */
+#movie_player .subread-box {
+  position: absolute; left: 5%; right: 5%; bottom: 12%; z-index: 60;
+  text-align: center; pointer-events: none; line-height: 1.35;
+  font-family: "Noto Sans", "Hiragino Sans", "Yu Gothic", Roboto, Arial, sans-serif;
+}
+#movie_player .subread-box[hidden] { display: none; }
+#movie_player .subread-line {
+  display: inline; white-space: pre-line; padding: 2px 8px;
+  color: #fff; background: rgba(8, 8, 8, .78); border-radius: 3px;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+#movie_player .subread-button {
+  position: absolute; top: 12px; right: 12px; z-index: 61;
+  width: 34px; height: 26px; padding: 0; border: 1px solid rgba(255, 255, 255, .7); border-radius: 4px;
+  background: rgba(8, 8, 8, .6); color: #fff; font: 600 12px/1 Arial, sans-serif; cursor: pointer; opacity: .55;
+}
+#movie_player .subread-button:hover, #movie_player .subread-button.subread-on { opacity: 1; }
+#movie_player .subread-button.subread-on { background: #fff; color: #000; }
+#movie_player.ytp-autohide .subread-button:not(.subread-on) { opacity: 0; }
+#movie_player .subread-panel {
+  position: absolute; top: 46px; right: 12px; z-index: 62; width: 300px; padding: 12px 14px;
+  background: rgba(16, 16, 16, .94); color: #eee; border-radius: 8px; font: 13px/1.4 Arial, sans-serif; text-align: left;
+}
+#movie_player .subread-panel[hidden] { display: none; }
+#movie_player .subread-title { font-weight: 700; margin-bottom: 4px; }
+#movie_player .subread-status { color: #bbb; margin-bottom: 8px; overflow-wrap: anywhere; }
+#movie_player .subread-row { display: flex; align-items: center; gap: 6px; margin: 7px 0; flex-wrap: wrap; }
+#movie_player .subread-panel button {
+  background: #2c2c2c; color: #eee; border: 1px solid #555; border-radius: 4px; padding: 3px 8px; cursor: pointer; font: inherit;
+}
+#movie_player .subread-panel button:hover { background: #3a3a3a; }
+#movie_player .subread-offset { min-width: 58px; text-align: center; font-variant-numeric: tabular-nums; }
+#movie_player .subread-rate { width: 84px; background: #222; color: #eee; border: 1px solid #555; border-radius: 4px; padding: 2px 4px; }
+#movie_player .subread-file { max-width: 190px; color: #ccc; font-size: 12px; }
+#movie_player .subread-help { color: #bbb; display: block; font-size: 12px; }
+#movie_player .subread-help a { color: #9cc3ff; }
