@@ -12,6 +12,20 @@ test('an .srt is read: numbers, stamps, text of more than one line, tags removed
   ]);
 });
 
+test('the text of each checked language is kept as it is: accents, inverted marks, quotes, kana', () => {
+  const lines = {
+    en: 'It was a dark night; the rain fell.',
+    pt: '— Não me parece bonito — disse ela, à porta.',
+    es: '¿Qué es esto? ¡Ñandú, señor Quijote!',
+    ru: '«Ёлка, — сказал он, — и её огни».',
+    ja: '「女のいない男たち」　東京で暮らしている。',
+  };
+  const source = Object.values(lines).map((text, i) => `${i + 1}\n00:00:0${i},000 --> 00:00:0${i},900\n${text}\n`).join('\n');
+  const cues = parse(source);
+  assert.deepEqual(cues.map((c) => c.text), Object.values(lines));
+  Object.values(lines).forEach((text, i) => assert.equal(cueAt(cues, i + 0.5).text, text));
+});
+
 test('a .vtt is read too, and what is not a cue is passed over', () => {
   const cues = parse('WEBVTT\n\nNOTE made by hand\n\n00:01.000 --> 00:02.5\nHello\n\nbroken --> block\nx\n\n3\n00:00:09,000 --> 00:00:08,000\nends before it starts\n');
   assert.deepEqual(cues, [{ start: 1, end: 2.5, text: 'Hello' }]);
