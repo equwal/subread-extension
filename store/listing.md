@@ -43,9 +43,12 @@ Private: the extension does not read, record or download the video or its sound,
 | Remote code | No |
 | Data usage | Collects none of the listed kinds of data. All three certifications: yes |
 
-## Graphics still to make
+## Graphics
 
-Chrome wants at least one screenshot of 1280 x 800 (or 640 x 400) and a
-440 x 280 promo tile; AMO wants none but shows screenshots when there are
-some. Take them from a real YouTube audiobook with the panel open and a line
-on screen. The icon is `icons/128.png`.
+`python tools/graphics.py` makes `store/graphics/screenshot-1280x800.png` and
+`store/graphics/promo-440x280.png` for Chrome. AMO wants none but shows
+screenshots when there are some. The icon is `icons/128.png`.
+
+The screenshot comes from the stand-in page, and its file button shows the
+language of the browser that took it. Replace it with a shot of a real YouTube
+audiobook, with the panel open and a line on screen.
