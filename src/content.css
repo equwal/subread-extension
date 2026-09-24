@@ -37,14 +37,21 @@
 #movie_player .subread-help { color: #bbb; display: block; font-size: 12px; }
 #movie_player .subread-help a { color: #9cc3ff; }
 
-/* The transcript panel: SubRead's own, styled to sit next to YouTube's related videos. */
+/* The transcript panel: SubRead's own, styled to sit next to YouTube's related videos.
+   YouTube sets the attribute "dark" on <html> in its dark theme. Its --yt-spec-* variables are not set on the page. */
 .subread-transcript {
+  --subread-bg: #f2f2f2; --subread-fg: #0f0f0f; --subread-dim: #606060;
+  --subread-hover: rgba(0, 0, 0, .06); --subread-current: rgba(0, 0, 0, .1);
   margin: 0 0 12px; border-radius: 12px; overflow: hidden;
-  background: var(--yt-spec-badge-chip-background, #f2f2f2);
-  color: var(--yt-spec-text-primary, #0f0f0f);
+  background: var(--subread-bg);
+  color: var(--subread-fg);
   /* Latin and Cyrillic fonts come first. The Japanese fonts have full-width Cyrillic letters. */
   font-family: "Noto Sans", Roboto, Arial, "Hiragino Sans", "Yu Gothic", sans-serif;
   font-size: 14px;
+}
+html[dark] .subread-transcript {
+  --subread-bg: #272727; --subread-fg: #f1f1f1; --subread-dim: #aaa;
+  --subread-hover: rgba(255, 255, 255, .08); --subread-current: rgba(255, 255, 255, .16);
 }
 .subread-transcript-header {
   display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; font-weight: 700;
@@ -56,9 +63,9 @@
 .subread-transcript-row {
   display: flex; gap: 12px; padding: 6px 8px; border-radius: 6px; cursor: pointer; line-height: 1.4;
 }
-.subread-transcript-row:hover { background: var(--yt-spec-10-percent-layer, rgba(0, 0, 0, .06)); }
-.subread-transcript-row.subread-current { background: var(--yt-spec-10-percent-layer, rgba(0, 0, 0, .1)); }
+.subread-transcript-row:hover { background: var(--subread-hover); }
+.subread-transcript-row.subread-current { background: var(--subread-current); }
 .subread-transcript-stamp {
-  flex: none; width: 44px; color: var(--yt-spec-text-secondary, #606060); font-variant-numeric: tabular-nums;
+  flex: none; width: 44px; color: var(--subread-dim); font-variant-numeric: tabular-nums;
 }
 .subread-transcript-text { white-space: pre-line; }
