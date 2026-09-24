@@ -16,6 +16,8 @@ The picture is from the stand-in page in `tests/mock/` (`/watch?v=mock&demo`), n
   **First line is now**, or move the start by 0.1 s and 1 s.
 - **Speed**: for an upload that runs a little faster or slower than your file.
 - The subtitles and these settings are kept for each video (the newest 8).
+- **Transcript**: shows SubRead's own transcript panel next to the video, filled
+  with your subtitles. Click a line to jump the video to it.
 
 ## What it does not do
 
