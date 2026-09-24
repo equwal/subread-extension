@@ -35,7 +35,8 @@ YouTube, and YouTube's terms do not allow it; this one only draws text.
 | `tests/srt.test.cjs` | `node --test tests/srt.test.cjs` |
 | `tests/mock/server.py` | A stand-in for a watch page, to try the content script by hand |
 | `tools/pack.py` | Makes `dist/subread-chrome.zip` and `dist/subread-firefox.zip` |
-| `tools/graphics.py` | Makes the Chrome screenshot and promo tile in `store/graphics/` |
+| `tools/graphics.py` | Makes the Chrome promo tiles in `store/graphics/` |
+| `tools/shots/` | Takes the store screenshots in Brave over CDP |
 | `store/listing.md` | The texts and answers for the two stores |
 
 ## Try it

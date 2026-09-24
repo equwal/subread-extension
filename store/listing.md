@@ -45,10 +45,25 @@ Private: the extension does not read, record or download the video or its sound,
 
 ## Graphics
 
-`python tools/graphics.py` makes `store/graphics/screenshot-1280x800.png` and
-`store/graphics/promo-440x280.png` for Chrome. AMO wants none but shows
-screenshots when there are some. The icon is `icons/128.png`.
+Upload the four `store/graphics/screenshot-*.png` (1280 x 800) to both stores.
+They show two YouTube audiobooks with the subtitles in `store/demo/`:
 
-The screenshot comes from the stand-in page, and its file button shows the
-language of the browser that took it. Replace it with a shot of a real YouTube
-audiobook, with the panel open and a line on screen.
+- Moby-Dick, LibriVox, read by Stewart Wills:
+  https://www.youtube.com/watch?v=PsNsjxIOcmw (text: Project Gutenberg #2701)
+- こころ 上, read by 西村俊彦:
+  https://www.youtube.com/watch?v=uPXpHYs7y3s (text: Aozora Bunko 773)
+
+The times of the lines come from the YouTube transcript. The words come from
+the book.
+
+To take them again, start Brave with the extension and a CDP port, then run
+`tools/shots/shot.mjs` for each shot:
+
+```
+brave --user-data-dir=%TEMP%\subread-shots --remote-debugging-port=9334 --load-extension=<this folder>
+node tools/shots/cdp.mjs tools/shots/shot.mjs <video url> <absolute .srt path> <seconds> <out.png> <panel 0|1>
+```
+
+`python tools/graphics.py` makes `promo-440x280.png` (small promo tile) and
+`marquee-1400x560.png` (marquee promo tile) for Chrome. The icon is
+`icons/128.png`.
