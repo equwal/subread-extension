@@ -6,6 +6,11 @@
  * time of the video is first moved onto the clock of the subtitles:
  *
  *     subtitle time = (video time - offset) * rate
+ *
+ * The transcript panel needs the other way round, from a cue's time back to a
+ * video time to seek to:
+ *
+ *     video time = subtitle time / rate + offset
  */
 (function (root) {
   'use strict';
@@ -46,9 +51,13 @@
     return null;
   }
 
-  const subtitleTime = (videoTime, offset, rate) => (videoTime - offset) * rate;
+  const subtitleTime = (videoT, offset, rate) => (videoT - offset) * rate;
 
-  const api = { parse, cueAt, subtitleTime, seconds };
+  // The inverse: a moment on the clock of the subtitles, back to a moment of the video.
+  // Used by the transcript panel to seek: videoTime(subtitleTime(t, offset, rate), offset, rate) is t.
+  const videoTime = (subTime, offset, rate) => subTime / rate + offset;
+
+  const api = { parse, cueAt, subtitleTime, videoTime, seconds };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.SubReadSrt = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this);

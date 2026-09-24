@@ -1,7 +1,7 @@
 /* node --test tests */
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { parse, cueAt, subtitleTime, seconds } = require('../src/srt.js');
+const { parse, cueAt, subtitleTime, videoTime, seconds } = require('../src/srt.js');
 
 test('an .srt is read: numbers, stamps, text of more than one line, tags removed', () => {
   const cues = parse('﻿1\r\n00:00:01,500 --> 00:00:04,000\r\nIt was a <i>dark</i> night;\r\nthe rain fell.\r\n\r\n' +
@@ -67,4 +67,23 @@ test('the time of the video is moved onto the clock of the subtitles', () => {
   assert.equal(subtitleTime(100, 0, 1), 100);
   assert.equal(subtitleTime(100, 12.5, 1), 87.5);            // the upload has a 12.5 s intro
   assert.ok(Math.abs(subtitleTime(3600, 0, 1.001) - 3603.6) < 1e-9);   // and runs a little slow
+});
+
+test('the transcript panel moves a cue time back onto the clock of the video', () => {
+  assert.equal(videoTime(100, 0, 1), 100);
+  assert.equal(videoTime(87.5, 12.5, 1), 100);               // the 12.5 s intro comes back
+  assert.ok(Math.abs(videoTime(3603.6, 0, 1.001) - 3600) < 1e-9);
+});
+
+test('videoTime undoes subtitleTime, and subtitleTime undoes videoTime, for many offsets and rates', () => {
+  let seed = 7;
+  const random = () => (seed = (seed * 1103515245 + 12345) >>> 0) / 2 ** 32;
+  for (let round = 0; round < 500; round++) {
+    const offset = (random() - 0.5) * 40;         // seconds, either side of 0
+    const rate = 0.9 + random() * 0.2;            // the panel limits rate to 0.9 .. 1.1
+    const videoT = random() * 7200;               // up to two hours in
+    const subT = subtitleTime(videoT, offset, rate);
+    assert.ok(Math.abs(videoTime(subT, offset, rate) - videoT) < 1e-9);
+    assert.ok(Math.abs(subtitleTime(videoTime(subT, offset, rate), offset, rate) - subT) < 1e-9);
+  }
 });
