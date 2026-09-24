@@ -2,7 +2,8 @@
 #movie_player .subread-box {
   position: absolute; left: 5%; right: 5%; bottom: 12%; z-index: 60;
   text-align: center; pointer-events: none; line-height: 1.35;
-  font-family: "Noto Sans", "Hiragino Sans", "Yu Gothic", Roboto, Arial, sans-serif;
+  /* Latin and Cyrillic fonts come first. The Japanese fonts have full-width Cyrillic letters. */
+  font-family: "Noto Sans", Roboto, Arial, "Hiragino Sans", "Yu Gothic", sans-serif;
 }
 #movie_player .subread-box[hidden] { display: none; }
 #movie_player .subread-line {
