@@ -26,6 +26,8 @@ Read along with an audiobook on YouTube, with subtitles whose words come from th
 2. Choose the .srt of that recording.
 3. If the video has an intro that your file does not have, play to the first line and press "First line is now". A speed control is there for an upload that runs a little fast or slow.
 
+Turn on "Transcript" to see all the lines next to the video. Click a line to jump to it.
+
 The subtitles and the settings are kept for each video, so they are there the next time.
 
 No subtitles yet? https://subread.space makes them from the audiobook and its ebook: free, in your browser, nothing uploaded. A small speech model only listens for where the narrator is; the text of each line is the book's own, so names, spelling and punctuation are right. For language learners, and for anyone who wants text and voice together.
