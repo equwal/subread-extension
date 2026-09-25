@@ -7,9 +7,11 @@ in the browser), then read along on the video.
 
 Press **SR** at the top right of the player, and choose the `.srt`.
 
-![The caption over the player, and the SR panel: file, start, speed, size](docs/screenshots/player.png)
+![Moby-Dick (LibriVox) on YouTube, with a line from the book over the player and the SR panel open](store/graphics/screenshot-2-moby-dick-panel.png)
 
-The picture is from the stand-in page in `tests/mock/` (`/watch?v=mock&demo`), not from YouTube.
+![Kokoro on YouTube, with the SubRead transcript next to the video](store/graphics/screenshot-1-kokoro-transcript.png)
+
+The subtitles in the pictures are in `store/demo/`. More languages are in `store/graphics/`.
 
 - **Start**: the video on YouTube often has an intro that your audio file does
   not. Play to where the narrator reads the first line and press
