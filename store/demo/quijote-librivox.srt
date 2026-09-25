@@ -1,0 +1,67 @@
+1
+00:00:20,000 --> 00:00:29,000
+El ingenioso hidalgo Don Quijote de la Mancha. Miguel de Cervantes Saavedra.
+
+2
+00:00:29,000 --> 00:00:37,000
+Desocupado lector: sin juramento me podrás creer que quisiera que este libro, como hijo del entendimiento,
+
+3
+00:00:37,000 --> 00:00:42,000
+fuera el más hermoso, el más gallardo y más discreto que pudiera imaginarse.
+
+4
+00:00:42,000 --> 00:00:49,000
+Pero no he podido yo contravenir al orden de naturaleza; que en ella cada cosa engendra su semejante.
+
+5
+00:00:49,000 --> 00:00:53,500
+Y así, ¿qué podrá engendrar el estéril y mal cultivado ingenio mío,
+
+6
+00:00:53,500 --> 00:00:58,500
+sino la historia de un hijo seco, avellanado, antojadizo
+
+7
+00:00:58,500 --> 00:01:03,000
+y lleno de pensamientos varios y nunca imaginados de otro alguno,
+
+8
+00:01:03,000 --> 00:01:06,500
+bien como quien se engendró en una cárcel,
+
+9
+00:01:06,500 --> 00:01:14,000
+donde toda incomodidad tiene su asiento y donde todo triste ruido hace su habitación?
+
+10
+00:01:14,000 --> 00:01:18,000
+El sosiego, el lugar apacible, la amenidad de los campos,
+
+11
+00:01:18,000 --> 00:01:22,000
+la serenidad de los cielos, el murmurar de las fuentes,
+
+12
+00:01:22,000 --> 00:01:29,000
+la quietud del espíritu son grande parte para que las musas más estériles se muestren fecundas
+
+13
+00:01:29,000 --> 00:01:36,000
+y ofrezcan partos al mundo que le colmen de maravilla y de contento.
+
+14
+00:01:36,000 --> 00:01:40,000
+Acontece tener un padre un hijo feo y sin gracia alguna,
+
+15
+00:01:40,000 --> 00:01:47,000
+y el amor que le tiene le pone una venda en los ojos para que no vea sus faltas,
+
+16
+00:01:47,000 --> 00:01:55,000
+antes las juzga por discreciones y lindezas y las cuenta a sus amigos por agudezas y donaires.
+
+17
+00:01:55,000 --> 00:02:00,000
+Pero yo, que, aunque parezco padre, soy padrastro de Don Quijote,

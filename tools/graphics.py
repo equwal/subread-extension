@@ -37,12 +37,12 @@ def promo() -> None:
 
 def marquee() -> None:
     canvas = Image.new("RGB", (1400, 560), BG)
-    # The right side: the video area of screenshot 1. Screenshot 2 has the same frame, but its
+    # The right side: the video area of store/demo/marquee-frame.png. Screenshot 2 has the same frame, but its
     # line is "He loved to dust his old grammars…" and its panel is open. Paste only the strip
-    # with that line over the line of screenshot 1.
+    # with that line over the line of that frame.
     box = (110, 56, 1155, 686)
     strip = (box[0], 570, box[2], 616)
-    shot = Image.open(OUT / "screenshot-1-moby-dick.png").convert("RGB").crop(box)
+    shot = Image.open(ROOT / "store" / "demo" / "marquee-frame.png").convert("RGB").crop(box)
     line = Image.open(OUT / "screenshot-2-moby-dick-panel.png").convert("RGB").crop(strip)
     shot.paste(line, (0, strip[1] - box[1]))
     shot = shot.resize((round(shot.width * 440 / shot.height), 440), Image.LANCZOS)
